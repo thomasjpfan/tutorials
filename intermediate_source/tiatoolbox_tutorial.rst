@@ -71,7 +71,7 @@ Please run the following command in your terminal to install these
 packages:
 
 
-`apt-get -y -qq install libopenjp2-7-dev libopenjp2-tools openslide-tools libpixman-1-dev` 
+`apt-get -y -qq install libopenjp2-7-dev libopenjp2-tools openslide-tools libpixman-1-dev`
 `pip install -q 'tiatoolbox<1.5' histoencoder && echo "Installation is done."`
 
 
@@ -207,7 +207,7 @@ the validation subset of `Kather
     with ZipFile(patches_path, "r") as zipfile:
         zipfile.extractall(path=global_save_dir)
 
-    # Download pretrained model weights for WSI classification using ResNet18 architecture 
+    # Download pretrained model weights for WSI classification using ResNet18 architecture
     download_data(
         "https://tiatoolbox.dcs.warwick.ac.uk/models/pc/resnet18-kather100k.pth",
         weights_path,
@@ -348,7 +348,7 @@ The PatchPredictor class runs a CNN-based classifier written in PyTorch.
 -  Alternatively, you can pass ``pretrained_model`` as a string
    argument. This specifies the CNN model that performs the prediction,
    and it must be one of the models listed
-   `here <https://tia-toolbox.readthedocs.io/en/latest/usage.html?highlight=pretrained%20models#tiatoolbox.models.architecture.get_pretrained_model>`__.
+   `here <https://tia-toolbox.readthedocs.io/en/latest/_autosummary/tiatoolbox.models.architecture.get_pretrained_model.html#tiatoolbox.models.architecture.get_pretrained_model>`__.
    The command will look like this:
    ``predictor = PatchPredictor(pretrained_model='resnet18-kather100k', pretrained_weights=weights_path, batch_size=32)``.
 -  ``pretrained_weights``: When using a ``pretrained_model``, the
@@ -363,8 +363,8 @@ The PatchPredictor class runs a CNN-based classifier written in PyTorch.
 .. code-block:: python
 
 
-    # Importing a pretrained PyTorch model from TIAToolbox 
-    predictor = PatchPredictor(pretrained_model='resnet18-kather100k', batch_size=32) 
+    # Importing a pretrained PyTorch model from TIAToolbox
+    predictor = PatchPredictor(pretrained_model='resnet18-kather100k', batch_size=32)
 
     # Users can load any PyTorch model architecture instead using the following script
     model = vanilla.CNNModel(backbone="resnet18", num_classes=9) # Importing model from torchvision.models.resnet18
